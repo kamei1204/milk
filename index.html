@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MIlk ANIMATION</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2>MILK</h2>
+            <div class="loader">
+                <span style="--i:0;"></span>
+                <span style="--i:1;"></span>
+                <span style="--i:2;"></span>
+                <span style="--i:3;"></span>
+                <span style="--i:4;"></span>
+                <span style="--i:5;"></span>
+                <span style="--i:6;"></span>
+                <span style="--i:7;"></span>
+                
+            </div>
+        </div>
+        <svg>
+            <filter id="Gooey">
+                <!-- SVGで図形にガウスぼかしのフィルターをかけるには、feGaussianBlur要素を使用します。
+　　　　　　　　　　ガウスぼかしのかかり方はパスを中心に内外どちらに対しても広がってかかります。 -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+                <!-- <feColorMatrix> は SVG のフィルター要素で、変換行列に基づいて色を変化させます。すべてのピクセルのカラー値 [R,G,B,A] は 5 x 5 の行列で行列乗算され、新しい色 [R',G',B',A'] を生成します。 -->
+                <!--  　　　　R G B A W
+                        R' | 1 0 0 0 0 |
+                        G' | 0 1 0 0 0 |
+                        B' | 0 0 1 0 0 |
+                        A' | 0 0 0 1 0 | -->
+                <feColorMatrix Values="
+                    1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 20 -10">
+            </filter>
+        </svg>
+    </body>
+</html>
